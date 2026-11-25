@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The New Disorder · Domagoj Juričić</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inconsolata:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: formal and calm, the same editorial voice as the author-platform concept.
+   IDEA: the concept's paper pages, wrapped around the book's own jacket.
+   PICTURE: the real cover in the hero; the guide turns like pages.
+   COLOUR and TYPE: paper #FAF9F6, ink #1C1B19, oxblood from the cover as the one accent; Georgia display, Inter text, Inconsolata labels.
+   LAYOUT: concept strip, header, hero, credentials, numbered sections, dark talks band, dark footer. */
+:root{color-scheme:light;--paper:#FAF9F6;--paper2:#F3F1EC;--ink:#1C1B19;--body:#4A4843;--soft:#6B6862;--line:#E6E2DA;--line2:#D8D3C8;--acc:#6E2A2A;--dark:#1C1B19;--dline:#3A3935;--dsoft:#CFCBC2;--gold:#E3C9A8}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
+[data-lang=en] [lang=hr],[data-lang=hr] [lang=en]{display:none!important}
+a{color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+.k{font-family:Inconsolata,monospace;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc)}
+.lbl{font-family:Inconsolata,monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}
+h1,h2,h3{font-family:Georgia,'Times New Roman',serif;font-weight:400}
+.strip{background:var(--dark);color:var(--paper);text-align:center;padding:12px 24px;font:13px/1.4 Inconsolata,monospace;letter-spacing:.08em;text-transform:uppercase}
+header{position:sticky;top:0;z-index:5;background:rgba(250,249,246,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;justify-content:space-between;min-height:72px}
+.brand{font-family:Georgia,serif;font-size:22px;text-decoration:none}
+header nav{display:flex;flex-wrap:wrap;gap:6px 26px;align-items:center;font-size:15px}
+header nav a{text-decoration:none}header nav a:hover{color:var(--acc)}
+.right{display:flex;gap:12px;align-items:center}
+.lang{display:flex;border:1px solid var(--line2);border-radius:999px;overflow:hidden}
+.lang button{all:unset;cursor:pointer;padding:9px 14px;font:600 13px Inter,sans-serif;color:var(--soft)}
+.lang button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 26px;border-radius:999px;text-decoration:none;font:500 16px Inter,sans-serif;border:1px solid var(--ink);cursor:pointer;background:none;color:var(--ink)}
+.btn.fill{background:var(--acc);border-color:var(--acc);color:var(--paper)}
+.btn.light{border-color:var(--paper);color:var(--paper)}
+.btn.lfill{background:var(--paper);border-color:var(--paper);color:var(--ink)}
+.btns{display:flex;flex-wrap:wrap;gap:14px}
+.lang button:focus-visible,.btn:focus-visible,.nav-b:focus-visible,.dots button:focus-visible,.q-t:focus-visible,.pill:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.hero .wrap{display:flex;flex-wrap:wrap;gap:64px;align-items:center;padding-top:clamp(56px,8vw,96px);padding-bottom:clamp(56px,8vw,88px)}
+.hero .txt{flex:999 1 540px}
+.hero h1{font-size:clamp(52px,7vw,96px);line-height:1.02;letter-spacing:-.02em;margin:22px 0 24px}
+.hero .sub{font-family:Georgia,serif;font-size:clamp(21px,2.2vw,26px);line-height:1.35;margin:0 0 28px;max-width:30ch}
+.hero .pitch{margin:0 0 36px;max-width:56ch;color:var(--body)}
+.cover-w{flex:1 1 300px;display:flex;justify-content:center}
+.cover{width:min(100%,340px);aspect-ratio:760/996;border-radius:3px;box-shadow:0 40px 70px -30px rgba(28,27,25,.55)}
+@media (prefers-reduced-motion:no-preference){.cover{animation:rise .8s ease-out both}@keyframes rise{from{opacity:0;transform:translateY(20px)}}}
+.cred{background:var(--paper2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cred .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;padding-top:36px;padding-bottom:36px}
+.cred p{margin:6px 0 0;font-size:15px;line-height:1.45}
+.band{padding:clamp(72px,9vw,112px) 0}
+.h2{font-size:clamp(34px,4vw,46px);line-height:1.1;margin:16px 0 0;max-width:22ch;text-wrap:balance}
+.lead{font-family:Georgia,serif;font-size:clamp(24px,2.6vw,32px);line-height:1.3;max-width:34ch;margin:28px 0 20px;text-wrap:balance}
+.body{color:var(--body);max-width:62ch;margin:0}
+#guide{background:var(--paper2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.g-head{display:flex;flex-wrap:wrap;gap:16px 48px;justify-content:space-between;align-items:end;margin-bottom:40px}
+.g-head p{color:var(--body);max-width:44ch;margin:0}
+.track{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 20px;scrollbar-width:thin}
+.card{flex:0 0 min(86%,620px);scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:clamp(28px,3.4vw,40px);box-shadow:0 1px 2px rgba(28,27,25,.04);display:flex;flex-direction:column;gap:14px}
+.card .num{font-family:Inconsolata,monospace;font-size:14px;letter-spacing:.12em;color:var(--soft)}
+.card h3{font-size:clamp(24px,2.6vw,30px);line-height:1.15;margin:0}
+.card p{margin:0;color:var(--body);font-size:16px}
+.card .where{font-size:15px;color:var(--soft);border-top:1px solid var(--line);padding-top:14px}
+.q-t{all:unset;cursor:pointer;align-self:flex-start;font:500 15px Inter,sans-serif;color:var(--acc);border:1px solid var(--line2);border-radius:999px;padding:9px 18px}
+.q-a{display:none;background:var(--paper);border-radius:10px;padding:16px 18px;font-family:Georgia,serif;font-size:19px;line-height:1.4}
+.card.open .q-a{display:block}
+.g-ctl{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;margin-top:8px}
+.nav-b{all:unset;cursor:pointer;width:48px;height:48px;border-radius:50%;border:1px solid var(--ink);display:grid;place-items:center;font-size:20px}
+.nav-b[disabled]{opacity:.3;cursor:default}
+.dots{display:flex;gap:8px;align-items:center}
+.dots button{all:unset;cursor:pointer;width:10px;height:10px;border-radius:50%;background:var(--line2)}
+.dots button[aria-current=true]{background:var(--acc);width:28px;border-radius:6px}
+.count{font-family:Inconsolata,monospace;color:var(--soft)}
+.two{display:flex;flex-wrap:wrap;gap:56px;margin-top:40px}
+.two>*{flex:1 1 380px}
+.roles{list-style:none;margin:0;padding:0}
+.roles li{border-top:1px solid var(--line2);padding:16px 0;display:grid;grid-template-columns:minmax(0,7em) minmax(0,1fr);gap:16px}
+.roles li>span:first-child{padding-top:3px}
+.buy{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:40px}
+.pill{border:1px solid var(--line2);border-radius:999px;padding:11px 20px;font-size:15px;text-decoration:none;background:#fff}
+.pill:hover{border-color:var(--acc);color:var(--acc)}
+.dark{background:var(--dark);color:var(--paper)}
+.dark .k{color:var(--gold)}
+.dark .body{color:var(--dsoft)}
+.mlist a{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 16px;align-items:baseline;border-top:1px solid var(--dline);padding:22px 0;text-decoration:none}
+.mlist a:last-child{border-bottom:1px solid var(--dline)}
+.mlist a span:first-child{font-family:Georgia,serif;font-size:22px}
+.mlist a:hover span:first-child{color:var(--gold)}
+.mlist .lbl{color:#B8B3A9}
+footer{border-top:1px solid var(--dline)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;padding-top:24px;padding-bottom:40px;font:12px/1.5 Inconsolata,monospace;letter-spacing:.12em;text-transform:uppercase;color:#9A968D}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:10px 18px;border-radius:999px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s}
+.toast.on{opacity:1}
+@media(max-width:860px){header nav{display:none}}
+@media(max-width:600px){.wrap{padding:0 18px}.card{flex-basis:92%}.roles li{grid-template-columns:minmax(0,1fr);gap:4px}.hero .wrap{gap:40px}}
+</style>
+</head>
+<body>
+<div class="strip"><span lang="hr">Koncept stranice knjige · Salty Brand Studio za Domagoja Juričića · nije službena stranica</span><span lang="en">Book website concept · Salty Brand Studio for Domagoj Juričić · not the official site</span></div>
+
+<header>
+<div class="wrap">
+<a href="#top" class="brand">Domagoj Juričić</a>
+<nav aria-label="Main">
+<a href="#question"><span lang="hr">Knjiga</span><span lang="en">The book</span></a>
+<a href="#guide"><span lang="hr">Vodič</span><span lang="en">Guide</span></a>
+<a href="#author"><span lang="hr">Autor</span><span lang="en">Author</span></a>
+<a href="#media"><span lang="hr">Mediji</span><span lang="en">Media</span></a>
+</nav>
+<div class="right">
+<div class="lang" role="group" aria-label="Language / Jezik">
+<button type="button" id="l-hr" data-l="hr" aria-pressed="false">HR</button>
+<button type="button" id="l-en" data-l="en" aria-pressed="true">EN</button>
+</div>
+<a class="btn fill" href="#buy" style="min-height:44px;padding:0 20px;font-size:15px"><span lang="hr">Kupi knjigu</span><span lang="en">Buy the book</span></a>
+</div>
+</div>
+</header>
+
+<section class="hero" id="top">
+<div class="wrap">
+<div class="txt">
+<div class="k"><span lang="en">New book · Vanguard Press, 2026</span><span lang="hr">Nova knjiga · Vanguard Press, 2026.</span></div>
+<h1>The New Disorder</h1>
+<p class="sub"><span lang="en">Rebuilding Meaning, Trust and Democratic Coherence in an Age of Fragmentation</span><span lang="hr">Obnova smisla, povjerenja i&#160;demokratske kohezije u&#160;doba fragmentacije</span></p>
+<p class="pitch"><span lang="en">The old order is not coming back. Beneath war, great-power rivalry and technological change lies a&#160;deeper crisis: the loss of trust, legitimacy and shared meaning.</span><span lang="hr">Stari poredak se ne vraća. Ispod ratova, rivalstva velikih sila i&#160;tehnoloških promjena leži dublja kriza: gubitak povjerenja, legitimiteta i&#160;zajedničkog smisla.</span></p>
+<div class="btns">
+<a class="btn fill" href="#buy"><span lang="en">Get the book</span><span lang="hr">Kupi knjigu</span></a>
+<a class="btn" href="#guide"><span lang="en">Read the guide</span><span lang="hr">Kreni u&#160;vodič</span></a>
+</div>
+</div>
+<div class="cover-w"><img class="cover" src="cover.jpg" alt="The New Disorder by Domagoj Juričić, book cover"></div>
+</div>
+</section>
+
+<section class="cred">
+<div class="wrap">
+<div><div class="lbl"><span lang="en">Former</span><span lang="hr">Bivši</span></div><p><span lang="en">Chief of Staff to the President of Croatia</span><span lang="hr">predstojnik Ureda predsjednice RH</span></p></div>
+<div><div class="lbl"><span lang="en">Former</span><span lang="hr">Bivši</span></div><p><span lang="en">State Secretary, Government of Croatia</span><span lang="hr">državni tajnik u&#160;Vladi RH</span></p></div>
+<div><div class="lbl"><span lang="en">Former</span><span lang="hr">Bivši</span></div><p><span lang="en">First Secretary, Croatian Embassy in Washington</span><span lang="hr">prvi tajnik u&#160;Veleposlanstvu RH u&#160;Washingtonu</span></p></div>
+<div><div class="lbl"><span lang="en">Member</span><span lang="hr">Član</span></div><p>The New Club of Paris</p></div>
+</div>
+</section>
+
+<section class="band" id="question">
+<div class="wrap">
+<div class="k">01 · <span lang="en">The book</span><span lang="hr">Knjiga</span></div>
+<h2 class="h2"><span lang="en">We keep waiting for the next order. What if disorder is the order?</span><span lang="hr">Stalno čekamo novi poredak. Što ako je nered sam taj poredak?</span></h2>
+<p class="lead"><span lang="en">The question at its heart: can a&#160;stable international order exist before trust is rebuilt inside our own societies?</span><span lang="hr">Pitanje u&#160;njezinu središtu: može li postojati stabilan međunarodni poredak prije nego što obnovimo povjerenje unutar vlastitih društava?</span></p>
+<p class="body"><span lang="en">Unlike accounts that read world affairs mainly through military and economic power, The New Disorder puts institutions, social trust and a&#160;shared sense of purpose at the centre. It joins geopolitical analysis, political philosophy and two decades of practice in diplomacy and government, and is written for decision-makers, business leaders and anyone asking where the world we grew up in is heading.</span><span lang="hr">Za razliku od analiza koje svijet čitaju ponajprije kroz vojnu i&#160;gospodarsku moć, The New Disorder u&#160;središte stavlja institucije, društveno povjerenje i&#160;osjećaj zajedničke svrhe. Spaja geopolitičku analizu, političku filozofiju i&#160;dva desetljeća prakse u&#160;diplomaciji i&#160;državnoj upravi, a&#160;namijenjena je donositeljima odluka, poslovnim liderima i&#160;svima koje zanima kamo ide svijet u&#160;kojem smo odrasli.</span></p>
+<div class="buy" id="buy">
+<span class="lbl" style="margin-right:6px"><span lang="en">Available at</span><span lang="hr">Dostupno na</span></span>
+<a class="pill" href="https://pegasuspublishers.com/author/domagoj-juricic">Pegasus · Vanguard Press</a>
+<a class="pill" href="https://www.amazon.co.uk/s?k=The+New+Disorder+Domagoj+Juricic">Amazon UK</a>
+<a class="pill" href="https://www.amazon.com/s?k=The+New+Disorder+Domagoj+Juricic">Amazon US</a>
+<a class="pill" href="https://www.amazon.co.uk/s?k=The+New+Disorder+Juricic&amp;i=digital-text">Kindle</a>
+<a class="pill" href="https://www.barnesandnoble.com/s/The%20New%20Disorder%20Juricic">Barnes &amp; Noble</a>
+<a class="pill" href="https://www.yes24.com/Product/Search?query=The%20New%20Disorder%20Juricic">YES24 (Korea)</a>
+</div>
+</div>
+</section>
+
+<section class="band" id="guide">
+<div class="wrap">
+<div class="g-head">
+<div>
+<div class="k">02 · <span lang="en">Reading guide</span><span lang="hr">Vodič kroz knjigu</span></div>
+<h2 class="h2"><span lang="en">Seven ideas from The New Disorder</span><span lang="hr">Sedam ideja iz knjige The New Disorder</span></h2>
+</div>
+<p><span lang="en">For readers, book clubs and boards. Each idea comes with a&#160;question to take into the room.</span><span lang="hr">Za čitatelje, klubove čitanja i&#160;uprave. Uz svaku ideju ide pitanje za raspravu.</span></p>
+</div>
+<div class="track" id="track" tabindex="0" aria-label="Guide"></div>
+<div class="g-ctl">
+<div class="dots" id="dots"></div>
+<div style="display:flex;gap:12px;align-items:center">
+<span class="count" id="count">1 / 7</span>
+<button class="nav-b" id="prev" type="button" aria-label="Previous">←</button>
+<button class="nav-b" id="next" type="button" aria-label="Next">→</button>
+</div>
+</div>
+</div>
+</section>
+
+<section class="band" id="author">
+<div class="wrap">
+<div class="k">03 · <span lang="en">The author</span><span lang="hr">Autor</span></div>
+<h2 class="h2">Domagoj Juričić</h2>
+<div class="two">
+<div>
+<p class="body" style="margin-bottom:18px"><span lang="en">Domagoj Juričić is a&#160;political risk analyst with more than two decades in diplomacy, public administration and international strategic advisory. Today he advises companies and institutions on political and regulatory risk, and comments regularly on international affairs in Croatian and regional media.</span><span lang="hr">Domagoj Juričić analitičar je političkih rizika s&#160;više od dva desetljeća iskustva u&#160;diplomaciji, državnoj upravi i&#160;međunarodnom strateškom savjetovanju. Danas savjetuje tvrtke i&#160;institucije o&#160;političkim i&#160;regulatornim rizicima i&#160;redovito komentira međunarodna zbivanja u&#160;hrvatskim i&#160;regionalnim medijima.</span></p>
+<p class="body"><span lang="en">He studied at the Faculty of Political Science in Zagreb and continued at George Washington University, the College of Europe and the International Business Management Institute in Berlin.</span><span lang="hr">Studirao je na Fakultetu političkih znanosti u&#160;Zagrebu, a&#160;usavršavao se na Sveučilištu George Washington, College of Europe i&#160;International Business Management Institute u&#160;Berlinu.</span></p>
+</div>
+<ul class="roles">
+<li><span class="lbl"><span lang="en">Diplomacy</span><span lang="hr">Diplomacija</span></span><span><span lang="en">First Secretary for Economic Affairs, Croatian Embassy in Washington</span><span lang="hr">prvi tajnik za gospodarske odnose, Veleposlanstvo RH u&#160;Washingtonu</span></span></li>
+<li><span class="lbl"><span lang="en">Government</span><span lang="hr">Vlada</span></span><span><span lang="en">State Secretary, Government of Croatia</span><span lang="hr">državni tajnik u&#160;Vladi Republike Hrvatske</span></span></li>
+<li><span class="lbl"><span lang="en">Presidency</span><span lang="hr">Predsjednica</span></span><span><span lang="en">Chief of Staff to the President of Croatia</span><span lang="hr">predstojnik Ureda predsjednice Republike Hrvatske</span></span></li>
+<li><span class="lbl"><span lang="en">Economy</span><span lang="hr">Gospodarstvo</span></span><span><span lang="en">Vice President, Croatian Chamber of Economy</span><span lang="hr">potpredsjednik Hrvatske gospodarske komore</span></span></li>
+<li><span class="lbl"><span lang="en">Today</span><span lang="hr">Danas</span></span><span><span lang="en">Political and regulatory risk advisory at MKPS</span><span lang="hr">savjetovanje o&#160;političkim i&#160;regulatornim rizicima u&#160;MKPS-u</span></span></li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="band dark" id="media">
+<div class="wrap">
+<div class="k">04 · <span lang="en">Media and talks</span><span lang="hr">Mediji i&#160;predavanja</span></div>
+<div class="two" style="margin-top:16px">
+<div>
+<h2 class="h2" style="margin-top:0"><span lang="en">For rooms that have to decide something.</span><span lang="hr">Za prostorije u&#160;kojima se mora nešto odlučiti.</span></h2>
+<p class="body" style="margin:24px 0 32px"><span lang="en">Keynotes, board briefings and moderated conversations on the themes of the book, in English and Croatian. Recent: The World Ahead 2027, Athens. Press kit with release, descriptions, bios and interview questions available on request.</span><span lang="hr">Predavanja, brifinzi za uprave i&#160;moderirani razgovori o&#160;temama iz knjige, na engleskom i&#160;hrvatskom. Nedavno: The World Ahead 2027, Atena. Press paket s&#160;priopćenjem, opisima, biografijama i&#160;pitanjima za intervju dostupan je na upit.</span></p>
+<div class="btns"><a class="btn lfill" href="#contact"><span lang="en">Request press kit</span><span lang="hr">Zatraži press paket</span></a><a class="btn light" href="#contact"><span lang="en">Book a&#160;talk</span><span lang="hr">Dogovori predavanje</span></a></div>
+</div>
+<div class="mlist">
+<a href="https://radar.nova.rs/global/intervju-domagoj-juricic/"><span>Radar · Nova.rs</span><span class="lbl"><span lang="en">Interview</span><span lang="hr">Intervju</span></span></a>
+<a href="https://n1info.hr/magazin/kultura/domagoj-juricic-knjiga-the-new-disorder-velika-britanija-30-10-2026"><span>N1</span><span class="lbl"><span lang="en">Feature</span><span lang="hr">Članak</span></span></a>
+<a href="https://dnevnik.hr/tema/domagoj+juricic/"><span>Dnevnik Nove TV</span><span class="lbl"><span lang="en">Studio guest</span><span lang="hr">Gost u&#160;studiju</span></span></a>
+<a href="https://www.logicno.com/zivotni-stil/covjek-koji-je-novi-svjetski-nered-vidio-petnaest-godina-prije-nas.html"><span>Logično</span><span class="lbl"><span lang="en">Essay</span><span lang="hr">Osvrt</span></span></a>
+<a href="https://www.ictbusiness.info/vijesti/objavljena-knjiga-domagoja-juricica-o-globalnim-promjenama-i-krizi-demokracije"><span>ICT Business</span><span class="lbl"><span lang="en">News</span><span lang="hr">Vijest</span></span></a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="band dark" id="contact" style="border-top:1px solid var(--dline)">
+<div class="wrap" style="display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between;align-items:flex-end">
+<div>
+<div class="k"><span lang="en">Contact</span><span lang="hr">Kontakt</span></div>
+<h2 class="h2"><span lang="en">Talks, interviews and advisory enquiries.</span><span lang="hr">Predavanja, intervjui i&#160;upiti za savjetovanje.</span></h2>
+</div>
+<div>
+<p class="body" style="margin:0 0 14px"><span lang="en">Enquiries via MKPS:</span><span lang="hr">Upiti putem MKPS-a:</span> mkps@mkps.hr</p>
+<div class="btns"><button class="btn lfill" type="button" id="copy"><span lang="en">Copy email</span><span lang="hr">Kopiraj e-mail</span></button><a class="btn light" href="https://hr.linkedin.com/in/djuricic">LinkedIn</a></div>
+</div>
+</div>
+</section>
+<footer class="dark"><div class="wrap"><span>Domagoj Juričić · Zagreb</span><span lang="en">Concept: Salty Brand Studio</span><span lang="hr">Koncept: Salty Brand Studio</span></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+{
+const ideas=[
+{en:["There is no way back to the old order","We keep describing this as an interregnum between two orders. The book argues it is a lasting new condition: instability has become the rule, not the exception.","Where you see it: decisions that wait for things to “return to normal” keep being postponed.","If disorder is permanent, which of our plans still assume a return to normal?"],
+ hr:["Nema povratka na stari poredak","Navikli smo ovo zvati međurazdobljem između dvaju poredaka. Knjiga tvrdi da je riječ o trajnom stanju: nestabilnost je postala pravilo, a ne iznimka.","Gdje se vidi: odluke koje čekaju „povratak u normalu“ stalno se odgađaju.","Ako je nered trajan, koji naši planovi još računaju na povratak u normalu?"]},
+{en:["No one can shape the system alone","Neither the United States, China nor the European Union has enough power, legitimacy and cohesion to build a stable order on its own.","Where you see it: alliances become flexible, temporary and transactional.","Which of our partners would still choose us if they no longer had to?"],
+ hr:["Nitko više ne može sam","Ni SAD, ni Kina, ni Europska unija nemaju dovoljno moći, legitimiteta i kohezije da sami izgrade stabilan poredak.","Gdje se vidi: savezništva postaju fleksibilna, privremena i transakcijska.","Tko od naših partnera bi nas i dalje birao kad više ne bi morao?"]},
+{en:["The real crisis is a crisis of trust","Democracy does not require agreement on policy, but it does require a minimum of agreement on facts. Algorithms that reward attention over truth accelerate an erosion that was already under way.","Where you see it: the same event, two incompatible realities.","On which facts does our own organisation no longer agree?"],
+ hr:["Prava kriza je kriza povjerenja","Demokracija ne traži slaganje oko politika, ali traži minimum slaganja oko činjenica. Algoritmi koji nagrađuju pažnju umjesto istine ubrzavaju eroziju koja je već bila u tijeku.","Gdje se vidi: isti događaj, dvije nespojive stvarnosti.","Oko kojih se činjenica ni u našoj organizaciji više ne slažemo?"]},
+{en:["Cohesion is not unity","Unity means agreement. Cohesion is the ability to act together despite disagreement. Democracies need the second far more than the first.","Where you see it: societies that cannot agree on anything long-term, even when they agree on a lot.","Can we still act together on the things we disagree about?"],
+ hr:["Kohezija nije jedinstvo","Jedinstvo znači slaganje. Kohezija je sposobnost da djelujemo zajedno unatoč neslaganju. Demokracijama je mnogo potrebnija druga nego prva.","Gdje se vidi: društva koja se ne mogu dogovoriti ni oko čega dugoročnog, iako se oko mnogo toga slažu.","Možemo li i dalje djelovati zajedno oko onoga oko čega se ne slažemo?"]},
+{en:["Stability is change without losing legitimacy","Stability no longer means the absence of change. It means institutions can adapt without losing legitimacy. Trust returns not through better PR, but when institutions act consistently, admit mistakes and apply the same rules to everyone.","Where you see it: reforms that fail not on substance, but on credibility.","Would people trust us more if we admitted one mistake publicly?"],
+ hr:["Stabilnost je promjena bez gubitka legitimiteta","Stabilnost više ne znači izostanak promjene, nego da se institucije mogu prilagoditi bez gubitka legitimiteta. Povjerenje se ne vraća boljim PR-om, nego kad institucije djeluju dosljedno, priznaju pogreške i primjenjuju ista pravila na sve.","Gdje se vidi: reforme koje ne padaju na sadržaju, nego na vjerodostojnosti.","Bi li nam ljudi više vjerovali kad bismo javno priznali jednu pogrešku?"]},
+{en:["Power runs through systems","Influence now comes from controlling technology platforms, standards, regulation, financial flows and supply chains, not only armies, borders and territory.","Where you see it: rules that shape a whole economy, written far from the people they affect.","Which systems do we depend on, and who writes their rules?"],
+ hr:["Moć prolazi kroz sustave","Utjecaj danas dolazi iz kontrole tehnoloških platformi, standarda, regulacije, financijskih tokova i opskrbnih lanaca, a ne samo vojske, granica i teritorija.","Gdje se vidi: pravila koja oblikuju cijelo gospodarstvo pišu se daleko od onih na koje se odnose.","O kojim sustavima ovisimo i tko piše njihova pravila?"]},
+{en:["Sovereignty is managing dependencies","For a small state the problem is not dependence, but asymmetric dependence. Real sovereignty means diversifying dependencies and keeping alternatives. Flexibility is an asset only when paired with a clear strategic goal.","Where you see it: full formal sovereignty, little real room to manoeuvre.","Do we have a real alternative for our most important dependency?"],
+ hr:["Suverenitet je upravljanje ovisnostima","Za malu državu problem nije ovisnost, nego asimetrična ovisnost. Stvarni suverenitet znači diversificirati ovisnosti i čuvati alternative. Fleksibilnost je prednost samo uz jasan strateški cilj.","Gdje se vidi: pun formalni suverenitet, malo stvarnog prostora za manevar.","Imamo li stvarnu alternativu za svoju najvažniju ovisnost?"]}
+];
+const roman=["I","II","III","IV","V","VI","VII"];
+const track=document.getElementById('track'),dots=document.getElementById('dots'),count=document.getElementById('count');
+const prev=document.getElementById('prev'),next=document.getElementById('next');
+const esc=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const part=(i,k)=>`<span lang="en">${esc(ideas[i].en[k])}</span><span lang="hr">${esc(ideas[i].hr[k]).replace(/(^|\s)([aikosuzAIKOSUZ]) /g,'$1$2\u00a0')}</span>`;
+track.innerHTML=ideas.map((d,i)=>`<article class="card" id="idea-${i}" aria-label="${roman[i]}"><div class="num">${roman[i]} / VII</div><h3>${part(i,0)}</h3><p>${part(i,1)}</p><p class="where">${part(i,2)}</p><button class="q-t" type="button" aria-expanded="false" aria-controls="qa-${i}"><span lang="en">Question to discuss</span><span lang="hr">Pitanje za raspravu</span></button><div class="q-a" id="qa-${i}">${part(i,3)}</div></article>`).join('');
+dots.innerHTML=ideas.map((d,i)=>`<button type="button" aria-label="${roman[i]}" data-i="${i}"></button>`).join('');
+const cards=[...track.children];let cur=0;
+const go=i=>{i=Math.max(0,Math.min(ideas.length-1,i));track.scrollTo({left:cards[i].offsetLeft-track.offsetLeft,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});};
+const mark=i=>{cur=i;count.textContent=(i+1)+' / '+ideas.length;[...dots.children].forEach((b,j)=>b.setAttribute('aria-current',j===i));prev.disabled=i===0;next.disabled=i===ideas.length-1;};
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&e.intersectionRatio>.6)mark(cards.indexOf(e.target));});},{root:track,threshold:[.6]});
+cards.forEach(c=>io.observe(c));mark(0);
+prev.addEventListener('click',()=>go(cur-1));next.addEventListener('click',()=>go(cur+1));
+dots.addEventListener('click',e=>{const b=e.target.closest('button');if(b)go(+b.dataset.i);});
+track.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();go(cur+1);}if(e.key==='ArrowLeft'){e.preventDefault();go(cur-1);}});
+track.addEventListener('click',e=>{const t=e.target.closest('.q-t');if(!t)return;const c=t.closest('.card');const o=c.classList.toggle('open');t.setAttribute('aria-expanded',o);});
+const root=document.documentElement;
+const setLang=l=>{root.dataset.lang=l;root.lang=l;document.getElementById('l-hr').setAttribute('aria-pressed',l==='hr');document.getElementById('l-en').setAttribute('aria-pressed',l==='en');try{localStorage.setItem('tnd-lang',l)}catch(e){}};
+document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.l)));
+let saved=null;try{saved=localStorage.getItem('tnd-lang')}catch(e){}
+setLang(saved||((navigator.language||'').toLowerCase().startsWith('hr')?'hr':'en'));
+const toast=document.getElementById('toast');
+document.getElementById('copy').addEventListener('click',async()=>{const hr=root.dataset.lang==='hr';try{await navigator.clipboard.writeText('mkps@mkps.hr');toast.textContent=hr?'E-mail kopiran':'Email copied';}catch(e){toast.textContent='mkps@mkps.hr';}toast.classList.add('on');setTimeout(()=>toast.classList.remove('on'),1800);});
+}
+</script>
+</body>
+</html>
