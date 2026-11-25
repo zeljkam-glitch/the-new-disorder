@@ -1,4 +1,4 @@
-{
+(()=>{
 const root=document.documentElement;const isHr=()=>root.dataset.lang==='hr';
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const bind=t=>t.replace(/(^|\s)([aikosuzAIKOSUZ]) /g,'$1$2 ');
@@ -58,4 +58,4 @@ const result=()=>{
   document.getElementById('qr').addEventListener('click',()=>{ans.fill(null);cur=0;render();});
 };
 render();
-}
+})();
