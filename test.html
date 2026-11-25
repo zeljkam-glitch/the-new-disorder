@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Test · The New Disorder</title>
+<meta name="description" content="How ready is your organisation for the new disorder? A ten-question self-assessment based on the book by Domagoj Juričić.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inconsolata:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="strip"><span lang="hr">Koncept stranice knjige · Salty Brand Studio za Domagoja Juričića · nije službena stranica</span><span lang="en">Book website concept · Salty Brand Studio for Domagoj Juričić · not the official site</span></div>
+
+<header>
+<div class="wrap">
+<a href="index.html" class="brand">Domagoj Juričić</a>
+<nav aria-label="Main">
+<a href="index.html#book"><span lang="hr">Knjiga</span><span lang="en">The book</span></a>
+<a href="index.html#guide"><span lang="hr">Vodič</span><span lang="en">Guide</span></a>
+<a href="test.html" aria-current="page"><span lang="hr">Test</span><span lang="en">Test</span></a>
+<a href="organizatori.html"><span lang="hr">Predavanja</span><span lang="en">Talks</span></a>
+<a href="index.html#brief"><span lang="hr">Bilten</span><span lang="en">The Brief</span></a>
+<a href="mediji.html"><span lang="hr">Mediji</span><span lang="en">Media</span></a>
+</nav>
+<div class="right">
+<div class="lang" role="group" aria-label="Language / Jezik"><button type="button" data-l="hr" aria-pressed="false">HR</button><button type="button" data-l="en" aria-pressed="true">EN</button></div>
+<a class="btn fill" href="index.html#buy" style="min-height:44px;padding:0 20px;font-size:15px"><span lang="hr">Kupi knjigu</span><span lang="en">Buy the book</span></a>
+</div>
+</div>
+</header>
+
+<section class="pagehead">
+<div class="wrap">
+<div class="k"><span lang="en">Self-assessment</span><span lang="hr">Samoprocjena</span></div>
+<h1><span lang="en">How ready is your organisation for the new disorder?</span><span lang="hr">Koliko je vaša organizacija spremna na novi nered?</span></h1>
+<p class="body"><span lang="en">Ten questions drawn from the seven ideas of the book. Three minutes. At the end you get a&#160;profile and the two ideas worth reading first.</span><span lang="hr">Deset pitanja izvedenih iz sedam ideja knjige. Tri minute. Na kraju dobivate profil i&#160;dvije ideje koje vrijedi pročitati prve.</span></p>
+</div>
+</section>
+<section class="band" style="padding-top:48px"><div class="wrap"><div id="quiz" class="quiz" aria-live="polite"></div></div></section>
+
+<footer class="dark"><div class="wrap"><span>Domagoj Juričić · Zagreb</span><span class="social"><a href="https://hr.linkedin.com/in/djuricic">LinkedIn</a></span><span lang="en">Concept: Salty Brand Studio</span><span lang="hr">Koncept: Salty Brand Studio</span></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="ideas.js"></script>
+<script src="main.js"></script>
+<script src="test.js"></script>
+</body>
+</html>
